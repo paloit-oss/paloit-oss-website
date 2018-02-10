@@ -69,8 +69,8 @@ a.btn .fa {
 }
 .btn-primary,
 a.btn-primary {
-  background: #40babd;
-  border: 1px solid #40babd;
+  background:  #6bc1b6;
+  border: 1px solid  #6bc1b6;
   color: #fff !important;
 }
 .btn-primary:hover,
@@ -267,7 +267,7 @@ select {
   -webkit-appearance: none;
 }
 #topcontrol {
-  background: #40babd;
+  background:  #6bc1b6;
   color: #fff;
   text-align: center;
   display: inline-block;
@@ -350,7 +350,7 @@ select {
 }
 .branding .icon {
   font-size: 24px;
-  color: #40babd;
+  color:  #6bc1b6;
 }
 .body-green .branding .icon {
   color: #75c181;
@@ -396,7 +396,7 @@ select {
   padding: 8px 0;
 }
 .footer a {
-  color: #40babd;
+  color:  #6bc1b6;
 }
 .footer .fa-heart {
   color: #EA5395;
@@ -413,7 +413,7 @@ select {
   margin-bottom: 30px;
 }
 .doc-header .doc-title {
-  color: #40babd;
+  color:  #6bc1b6;
   margin-top: 0;
   font-size: 36px;
 }
@@ -798,7 +798,7 @@ select {
 }
 .doc-menu > li > a:hover,
 .doc-menu > li > a:focus {
-  color: #40babd;
+  color:  #6bc1b6;
   text-decoration: none;
   background: none;
 }
@@ -828,8 +828,8 @@ select {
 }
 .doc-menu > li.active > a {
   background: none;
-  border-left: 4px solid #40babd;
-  color: #40babd;
+  border-left: 4px solid  #6bc1b6;
+  color:  #6bc1b6;
   font-weight: 600;
 }
 .body-green .doc-menu > li.active > a {
@@ -875,7 +875,7 @@ select {
   background: none;
 }
 .doc-sub-menu > li > a:hover {
-  color: #40babd;
+  color:  #6bc1b6;
   text-decoration: none;
   background: none;
 }
@@ -902,7 +902,7 @@ select {
 }
 .doc-sub-menu > li.active > a {
   background: none;
-  color: #40babd;
+  color:  #6bc1b6;
 }
 .body-green .doc-sub-menu > li.active > a {
   color: #75c181;
@@ -1102,7 +1102,7 @@ select {
 }
 .landing-page .branding .icon {
   font-size: 32px;
-  color: #40babd;
+  color:  #6bc1b6;
 }
 .landing-page .tagline {
   font-weight: 600;
@@ -1198,16 +1198,16 @@ select {
   /* for IE8 */
 }
 .cards-section .item-inner:hover {
-  box-shadow: 0px 1px 8px #40babd;
+  box-shadow: 0px 1px 8px  #6bc1b6;
 }
 .cards-section .item-primary .item-inner {
-  border-top: 3px solid #40babd;
+  border-top: 3px solid  #6bc1b6;
 }
 .cards-section .item-primary .item-inner:hover .title {
   color: #2d8284;
 }
 .cards-section .item-primary .icon {
-  color: #40babd;
+  color:  #6bc1b6;
 }
 .cards-section .item-green .item-inner {
   border-top: 3px solid #75c181;
@@ -1284,5 +1284,5 @@ select {
        
  .scroll-style::-webkit-scrollbar-thumb {
 	 border-radius: 10px;
-    background-color: #40babd;
+    background-color:  #6bc1b6;
  }
