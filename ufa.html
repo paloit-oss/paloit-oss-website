@@ -52,101 +52,144 @@
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title">UNIVERSAL FRONTEND ARCHITECTURE</h1>
                 </div><!--//doc-header-->
+                <h4 class="short-description">Universal Frontend Architecture is a Generic Modularized Cross-framework UI Architecture for building effective, robust and maintainable Digital Products, Component Libraries and UI SDKs across a Product Oriented Company.</h4>
                 <div class="doc-body">
                     <div class="doc-content">
                         <div class="content-inner">
-                            <section id="architecture-section" class="doc-section">
-                                <h2 class="section-title">Architecture</h2>
+                            <section id="vision-section" class="doc-section">
+                                <h2 class="section-title">Vision</h2>
                                 <br/>
-                                <p>Note: This Architecture is based on the 12 Factor Principles <a href="https://12factor.net/">https://12factor.net/</a> for SAAS and PAAS applications.</p>
+                                <ol>
+                                    <li>Define and build an universal architecture that is framework agnostic but remains opinionated to allow semi constrained UI development across a company.</li>
+                                    <li>Allow a core UI team to manage the coding conventions, artifact repository, build pipelines etc. across all the products of a company.</li>
+                                    <li>Build, share and manage Component Libraries conforming to a Company Style/Branding Guide.</li>
+                                    <li>Build SDK’s to help with faster development with meta-data driven screens.</li>
+                                </ol>
+                            </section>
+                            <section id="challenge-section" class="doc-section">
+                                <h2 class="section-title">Challenge - The Current UI Landscape</h2>
+                                <br/>
+                                <img src="assets/images/ui-landscape.png"/>
+                            </section>
+                            <section id="architecture-section" class="doc-section">
+                                <h2 class="section-title">Framework</h2>
+                                <h5>The Architecture will be composed of Horizontal Framework and Vertical Framework.</h5>
                                 <div id="hori"  class="section-block">
                                     <h3>Horizontal framework</h3>
-                                    <p>We need a horizontal (generic purpose) framework, which can be the base of our vertical framework. We’re looking for a full framework:</p>
+                                    <p>Choices for Horizontal Framework varies from one company to another (Angular, ReactJS, VueJS etc.) . But the common aspects that we need to look for in any library/framework are below:</p>
                                     <ul>
                                         <li>Open Source</li>
                                         <li>Nice and clean architecture</li>
                                         <li>Modular</li>
                                         <li>Consistent</li>
                                         <li>Component based approach</li>
-                                        <li>Unit testing</li>
+                                        <li>Testable</li>
                                         <li>Provides a lot of tools out of the box</li>
                                         <li>Designed for large scale development</li>
+                                        <li>Performance</li>
+                                        <li>Security</li>
                                     </ul>
-
-                                    <p>Examples: Angular, ReactJS</p>
                                 </div>
-                                <div id="vert"  class="section-block">
+                                <div id="language"  class="section-block">
+                                        <h3>Language</h3>
+                                        <p>Language selection should be based on, which language the developers are more confortable to code! Below are our choices for the three most popular frontend libraries.</p>
+                                        <ul>
+                                            <li>ES6 or ES7 - ReactJS, VueJS</li>
+                                            <li>Typescript - Angular, ReactJS, VueJS</li>
+                                            <li>ES6 or ES7 (with FLOW typechecker) - ReactJS</li>
+                                        </ul>
+                                </div>
+                                <div id="vert" class="section-block">
                                     <h3 class="block-title">Vertical Framework</h3>
-                                    <p>It provides tools out of the box, which are non domain specific or common across all products, for example logging, security, navigation (between pages and Modules), components, etc. These tools helps you focus on solving domain specific problems and avoid boilerplate coding.</p>
-                                    <img src="assets/images/docs/arch1.jpg"/>
-                                </div>
-                                <br/>
-                                <div id="libs"  class="section-block">
-                                    <h3 class="block-title">3rd Party Libs</h3>
-                                    <p>It is essential to have a harmonized / standardized 3rd party library set. It makes possible to share code and can prevent code conflicts. The Framework’s responsibility is to define the standardized 3rd party library set, which common across domains.</p>
-
-                                    <p>3rd party libs should be handled via dependencies, they should not be part of the source code.</p>
-
-                                    <h5>We can split the libs into 3 logical groups:</h5>
-
-                                    <ul>
-                                        <li>Architecture: This group contains the libs which define or specify the architectural patterns what we should follow in development time. For example Angular2 gives us the MVC and the MVVM architectural patterns.</li>
-                                        <li>Design / Components: This group contains the libs which make easier to develop the design and widgets. For example Bootstrap gives us a lot of tools to develop responsive, mobile first web apps. All the 3rd party widgets like D3.js or UI Grid belongs here.</li>
-                                        <li>Utilities: This group contains the libs which provider utilities for solving special problems. For example Lodash makes it easier to handle collections and arrays, or MomentJs gives us a lot of tools for date and time handling.</li>
-                                    </ul>
-                                     <img src="assets/images/docs/arch2.jpg"/>
-                                </div>
-                                <br/>
-                                <div id="framework"  class="section-block">
-                                    <h3 class="block-title">Core Framework</h3>
-                                    <img src="assets/images/docs/arch3.jpg"/>
-                                </div>
-                                <br/>
-                                <div id="modules"  class="section-block">
-                                    <h3 class="block-title">Module Dependency</h3>
-                                    <h5>What is a Module?</h5>
-                                    <p>Module by itself is a final product, a bounded context (http://martinfowler.com/bliki/BoundedContext.html). A Module cannot be extended, augmented or changed, but another Module can be created that provides the desired augmented services or extensions.</p>
-
-                                     <p>A Module is always domain specific and a deployable unit. The recommendation is one Module is one package.</p>
-
-                                      <p>A user workflow typically involves N Modules. The Framework allows seamless navigation across Modules.</p>
-                                    <img src="assets/images/docs/arch4.jpg"/>
+                                    <p>Vertical Framework is what we will define to make sure any horizontal framework can fit into it seamlessly.</p>
+                                    <img src="assets/images/ufa/vertical-architecture.png"/>
+                                    <br/>
+                                    <br/>
+                                    <h4>Deployment Container</h4>
+                                    <p>
+                                        <h5>What are Deployment Containers?</h5>
+                                        <p>
+                                            Deployment Containers are used to compose multiple modules to create Products. 
+                                            Deployment Containers have a single responsibility. That is to import all the required modules to build a product and to call the CLI to help in all the tasks from bundling to testing.
+                                            Deployment Containers don’t have any code that contributes to a functionality or user interface. In other words they are aggregators and not creators.
+                                        </p>
+                                        <h5>How many Deployment Containers can a Product have?</h5>
+                                        <p>
+                                            Every Product has at least one DC. But when you want to separate the code for a true microservices deployment where even the UI code is broken down into multiple parts and deployed along with the backend microservice, we can consider to have multiple DC’s.
+                                        </p>
+                                    </p>
+                                    <br/>
+                                    
+                                    <h4>Components</h4>
+                                    <p>
+                                        The Components should contain all the non domain specific visual components and helpers, that can be used to create other components and business features.
+                                        <h5>What is a component?</h5>
+                                        <p>
+                                            A component is a discrete bit of the UI that owns one specific 
+                                            responsibility and does it well. 
+                                            <br/>
+                                            There are 2 types of components: non domain specific and
+                                            domain specific.
+                                        </p>
+                                        <h5>What is a non domain specific component?</h5>
+                                        <p>
+                                            Non domain specific components are baseline UI elements that on their own don’t provide context, but are moldable for different solutions.
+                                            Modals, tooltips, inputs and toasts are all good examples of non domain specific components.
+                                        </p>
+                                    </p>
+                                    <br/>
+                                    
+                                    <h4>Modules and Shared Modules</h4>
+                                    <p>
+                                        <h5>What is a Module?</h5>
+                                        <p>
+                                            Module by itself is a final product, a bounded context 
+                                            (http://martinfowler.com/bliki/BoundedContext.html). 
+                                            
+                                            A Module cannot be extended, augmented or changed, but 
+                                            another Module can be created that provides the desired 
+                                            augmented services or extensions.
+                                            
+                                            A Module is always domain specific and a deployable unit. 
+                                            A user workflow typically involves N Modules. 
+                                            The Framework allows seamless navigation across Modules.
+                                        </p>
+                                        <h5>What is a Shared Module?</h5>
+                                        <p>
+                                            A Module is deployable and not shareable by default. If you need to share something from a Module, you should create a Shared Module, which is shareable and not deployable and also a bounded context (and a separate package). You can use the Shared Module as a (3rd party) dependency in an other Module.
+                                        </p>
+                                    </p>
+                                    <br/>
+                                    
+                                    <h4>Theme Module</h4>
+                                    <p>
+                                        Themes define the look and feel. An application can be configured to have mulitple themes and switching between themes can be done at run time (dynamically).
+                                        <ul>
+                                            <li>Themes are also considered as separate npm packages so that a Deployment Container can compose a Product based on multiple themes with user specific theme selection.</li>
+                                            <li>Themes should provide default styles, colors, layouts for all the components, modules and shared modules to use and extend.</li>
+                                            <li>Themes should also have capability to override the component/module specific styles to allow fine grained control to Product teams.</li>
+                                            <li>Themes should be dynamic and can be changed on the fly without browser refresh.</li>
+                                            <li>Handling multiple themes is a requirement in some companies where they want to show a common theme for login for all the products but post-login they want product specific themes.</li>
+                                        </ul>
+                                    </p>
+                                    <br/>
                                 </div>
                             </section>
-                            <section id="sdk-section" class="doc-section">
-                                <h2 class="section-title">SDK</h2>
-                                <h3>What is a SDK?</h3>
-                                <p>A software development kit (SDK) is a set of tools used for developing applications provided by hardware and software providers. SDKs are usually comprised of application programming interfaces (APIs), sample code, documentation, etc.</p>
-                                
-                                <h3>Why do we need a SDK?</h3>
-                                <p>From a business perspective, the idea is that a tightly knit development community will serve as a competitive advantage in the marketplace. An example is Apple and the combination of the iPhone and the App Store™. The selection of applications for the iPhone provides a competitive advantage to Apple versus its competitors. In this sense, the device goes from being a commoditized piece of hardware to a platform that other companies need to plugin to. So while the term SDK has been around since the beginning of software, it can often serve as the starting point in an IT company’s business strategy.</p>
-
-                                <h3>How to approach a SDK?</h3>
-                                <p>Below are a few ways to acheive SDK</p>
-
-                                <ul>
-                                    <li>Modularized Code makes it easy to extend parts of application instead as a whole</li>
-                                    <li>Extension Points to most of the moving parts of a application like Services, Controllers etc.</li>
-                                    <li>Detailed API Documentation</li>
-                                    <li>Scaffolding Tools</li>
-                                    <li>Configuration over Code (Metadata based application)</li>
-                                    <li>Tools to generate the configuration</li>
-                                </ul>
-
-                                <h3>UI SDK through configuration</h3>
-                                <p>Enterprise Digital Software consists mainly of Forms, Lists and Dashboards. 
-                                    So by targeting to make these three major components to be rendered based on Configuration allows us to make the Code comply to CUDM (Customizable, Upgradable, Deployable and Migratable)</p>
-                                
-                                <p>For each component (form, list or dashboard) we need the below</p>
-                                <ul>
-                                    <li>Registry to register sub-components with their specific configuration</li>
-                                    <li>Configuration Interpretor and Renderer</li>
-                                    <li>Designer to allow generation of the Configuration through Drag n Drop for super fast development and also this allows us to acheive constrained development</li>
-                                </ul>
-
-                                <div class="section-block">
-                                    <img src="assets/images/docs/sdk.jpg"/>
-                                </div>
+                            <section id="comp-lib-section" class="doc-section">
+                                    <h2 class="section-title">Component Library</h2>
+                                    <br/>
+                                    <p>Major initial effort is usually concentrated on building the components, this is where companies go wrong. Instead, more effort should be placed on designing/architecting the way to build, share and maintain the components in the initial stages of a library. Later it becomes very easy to build components on pre-defined architecture and share the components in a automatic way. In other words, we need to strive to attain Continuous Release/Delivery, so that all the consumers of these components are notified about new releases and they can upgrade based on the product strategy. 
+                                    </p>
+                                    <h3>Below are some points to consider when building component libraries:</h3>
+                                    <ul>
+                                        <li>CLI to scaffold components.</li>
+                                        <li>Version control each component (Follow a versioning protocol like Semantic Versioning 2.0)</li>
+                                        <li>CLI to auto build every component into a shareable artifact, test it and auto publish it to the Artifact Repository.</li>
+                                        <li>Sourcemaps need to be attached along with the artifact if we are obfuscating and uglifying the source.</li>
+                                        <li>Generate API documents and publish the same with the Component artifact (JSDoc, TSDoc, SCSSDoc etc.) so that the consumer gets immediate document to refer to.</li>
+                                        <li>Generate Release notes for every Component providing the list of bug fixes, features, breaking changes etc., so this will help the consumer to decide on the strategy to upgrade.</li>
+                                        <li>Component Showcase/Demo for demonstrating all releases of components. This will prove that the component seamlessly fits along with other components (Eg. React StoryBook, Styleguidst)</li>
+                                    </ul>
                             </section>
                             <section id="build-system-section" class="doc-section">
                                 <h2 class="section-title">Build System Requirements</h2>
@@ -174,72 +217,65 @@
                                         <li>Test</li>
                                         <li>Dependency Management</li>
                                 </div>
-
-                                <div id="generic" class="section-block">
-                                    <h3 class="block-title">Generic Build Pipeline</h3>
-                                    <img src="assets/images/docs/build1.jpg"/>
-                                </div>
+                            </section>
+                            <section id="build-pipelines" class="doc-section">
+                                <h2 class="section-title">Build Pipelines</h2>
+                                <br/>
+                                <p>Below are the various build pipelines, each one serving different purposes:</p>
                                 <br/>
                                 <div id="prod"  class="section-block">
                                     <h3 class="block-title">Production Build Pipeline</h3>
-                                    <img src="assets/images/docs/build2.jpg"/>
+                                    <p>Bundle for production with code obfuscation, assets compressions and other bundle optimizations</p>
+                                    <img src="assets/images/ufa/build-production.png"/>
                                 </div>
-                                <br/>
                                 <div id="dev"  class="section-block">
                                     <h3 class="block-title">Development Build Pipeline</h3>
-                                    <img src="assets/images/docs/build3.jpg"/>
+                                    <p>Bundle for development which can run using a Server Emulator</p>
+                                    <img src="assets/images/ufa/build-development.png"/>
                                 </div>
-                                <br/>
                                 <div id="incdev"  class="section-block">
                                     <h3 class="block-title">Incremental Development Build Pipeline</h3>
-                                    <img src="assets/images/docs/build4.jpg"/>
+                                    <p>Bundle for development with in-memory Hot Module Replacement Server and Server Emulator</p>
+                                    <img src="assets/images/ufa/build-incremental.png"/>
                                 </div>
-                                <br/>
                                 <div id="coverage"  class="section-block">
                                     <h3 class="block-title">Coverage Build Pipeline</h3>
-                                    <img src="assets/images/docs/build5.jpg"/>
+                                    <p>Bundle for generating Test Coverage reports</p>
+                                    <img src="assets/images/ufa/build-test-coverage.png"/>
                                 </div>
-                                <br/>
                                 <div id="publish"  class="section-block">
-                                    <h3 class="block-title">Publish Build Pipeline</h3>
-                                    <img src="assets/images/docs/build6.jpg"/>
+                                    <h3 class="block-title">Publish/Share Build Pipeline</h3>
+                                    <p>Bundle for components and sharable artifacts (packages)</p>
+                                    <img src="assets/images/ufa/build-publish.png"/>
                                 </div>
                             </section>
-                            <section id="coding-convention-section" class="doc-section">
-                                <h2 class="section-title">Coding Conventions</h2>
-                                <div class="section-block">
-                                    <h3>What does it mean?</h3>
-                                    <p>Coding conventions are a set of rules / guidelines for a specific programming language that recommend programming style, practices and methods for each aspect of a piece program written in this language. These conventions usually cover file organization, indentation, comments, declarations, statements, whitespace, naming conventions, programming practices, programming principles, programming rules of thumb, architectural best practices, etc. These are guidelines for software structural quality. Conventions should be formalized in a documented set of rules that an entire team or company follows.</p>
-
-                                    <br/>
-                                    <h3>Why we need coding conventions?</h3>
-                                    <p>The main goal is to reduce the overall cost of software maintenance, but there are many other reasons like: </p>
-
-                                    <ul>
-                                        <li>Enforce consistency</li>
-                                        <li>Unified knowledge base, solid ground for working together</li>
-                                        <li>Protect us from common mistakes</li>
-                                        <li>Improve readability</li>
-                                        <li>Easier maintenance</li>
-                                    </ul>
-                                    
-                                    <br/>
-
-                                    <h3>What should the coding conventions cover?</h3>
-                                    <p>It should cover the followings:</p>
-                                    <ul>
-                                        <li>JavaScript (ECMAScript 6)</li>
-                                        <li>TypeScript</li>
-                                        <li>CSS</li>
-                                        <li>SASS</li>
-                                        <li>HTML</li>
-                                        <li>Angular or ReactJS Specific</li>
-                                    </ul>
-                                </div>
+                            <section id="dep-man-section" class="doc-section">
+                                    <h2 class="section-title">Dependency Management</h2>
+                                    <div class="section-block">
+                                        <p>There are 2 kind of dependency handling tasks. One is JavaScript file related and the other is package related.</p>
+                                        <h3>What is a package?</h3>
+                                        <p>A package is a collection of reusable code, like an artifact in the Maven world.</p>
+                                        <p>There are 2 kind of packages:</p>
+                                        <ul>
+                                            <li>Shareable</li>
+                                            <li>Deployable</li>
+                                        </ul>
+                                        <p>A package cannot be both at the same time.</p>
+                                        <h3>Dependencies between files</h3>
+                                        <p>We need to handle dependencies between JavaScript files for bundling (automatic concatenation).</p>
+                                        <p>The recommendation is ES6/7 Modules.</p>
+                                        <h3>Dependencies between packages</h3>
+                                        <p>The other kind of dependency management task is to handle dependencies between packages.</p>
+                                        <p>The recommendation is npm (https://docs.npmjs.com/).</p>
+                                        <h3>Sharing code</h3>
+                                        <p>When you want to share your code, you should share it as a package via npm. We need have a private npm repository, like Nexus or Artifactory for publishing the shareable code and allowing product teams to directly connect and download dependencies.</p>
+                                    </div>
                             </section>
                             <section id="formats-section" class="doc-section">
                                 <h2 class="section-title">Output Format Requirements</h2>
-                                <div class="section-block">
+                                <br/>
+                                <p>Output format refers to a final bundle of either a module, component or a deployable package. </p>
+                                <div id="deployable" class="section-block">
                                     <h3>Deployable format requirements for production</h3>
                                     <p>The goal is to have a highly optimized output for production.</p>
 
@@ -250,6 +286,7 @@
                                             <li>Minified</li>
                                             <li>Concatenated</li>
                                             <li>Source map attached</li>
+                                            <li>Not Include Tests</li>
                                         </ul>
 
                                         <h5>SCSS</h5>
@@ -279,8 +316,8 @@
                                         </ul>
                                     </div>
                                     
-                                    <br/>
-
+                                </div>
+                                <div id="shareable" class="section-block"> 
                                     <h3>Shareable format requirements for publishing</h3>
                                     <p>The idea is that you can use any kind of programming language (ES5, ES6, TypeScript or whatever you want) for development, but when you share it via npm, you should produce an output which is conform with the requirements (see below). So before we publish a package to the npm repository, we need to pre-process the source code. This is the bare minimum and a must to be able to share code via npm.</p>
 
@@ -292,6 +329,7 @@
                                             <li>Concatenated</li>
                                             <li>Source map attached</li>
                                             <li>TypeScript type definitions attached</li>
+                                            <li>Should include Tests</li>
                                         </ul>
 
                                         <h5>SCSS</h5>
@@ -324,36 +362,112 @@
                                     </div>
                                 </div>
                             </section>
+                            <section id="versioning-section" class="doc-section">
+                                    <h2 class="section-title">Versioning</h2>
+                                    <div class="section-block">
+                                        <p>To version the packages(artifacts) the recommendation is Semantic Versioning 2.0.0 (SemVer): http://semver.org/spec/v2.0.0.html</p>
+                                        <h3>Points to remember:</h3>
+                                        <ul>
+                                            <li>CLI should manage - Snapshot / pre-release version handling.</li>
+                                            <li>Snapshot / pre-release versions should NOT be shared or published to the npm repository (Because snapshots will be shared via Code Repository).</li>
+                                            <li>CLI to manage the versions, dependency checks etc.</li>
+                                        </ul>
+                                    </div>
+                            </section>
+                            <section id="coding-convention-section" class="doc-section">
+                                    <h2 class="section-title">Coding Conventions</h2>
+                                    <div class="section-block">
+                                        <h3>What does it mean?</h3>
+                                        <p>Coding conventions are a set of rules / guidelines for a specific programming language that recommend programming style, practices and methods for each aspect of a piece program written in this language. These conventions usually cover file organization, indentation, comments, declarations, statements, whitespace, naming conventions, programming practices, programming principles, programming rules of thumb, architectural best practices, etc. These are guidelines for software structural quality. Conventions should be formalized in a documented set of rules that an entire team or company follows.</p>
+    
+                                        <br/>
+                                        <h3>Why we need coding conventions?</h3>
+                                        <p>The main goal is to reduce the overall cost of software maintenance, but there are many other reasons like: </p>
+    
+                                        <ul>
+                                            <li>Enforce consistency</li>
+                                            <li>Unified knowledge base, solid ground for working together</li>
+                                            <li>Protect us from common mistakes</li>
+                                            <li>Improve readability</li>
+                                            <li>Easier maintenance</li>
+                                        </ul>
+                                        
+                                        <br/>
+    
+                                        <h3>What should the coding conventions cover?</h3>
+                                        <p>It should cover the followings:</p>
+                                        <ul>
+                                            <li>JavaScript (ECMAScript 6 or above)</li>
+                                            <li>TypeScript</li>
+                                            <li>CSS</li>
+                                            <li>SASS</li>
+                                            <li>HTML</li>
+                                            <li>Angular, ReactJS or VueJS Specific (i.e. Library specific)</li>
+                                        </ul>
+                                    </div>
+                            </section>
+                            <section id="sdk-section" class="doc-section">
+                                    <h2 class="section-title">SDK</h2>
+                                    <h3>What is a SDK?</h3>
+                                    <p>A software development kit (SDK) is a set of tools used for developing applications provided by hardware and software providers. SDKs are usually comprised of application programming interfaces (APIs), sample code, documentation, etc.</p>
+                                    
+                                    <h3>Why do we need a SDK?</h3>
+                                    <p>From a business perspective, the idea is that a tightly knit development community will serve as a competitive advantage in the marketplace. An example is Apple and the combination of the iPhone and the App Store™. The selection of applications for the iPhone provides a competitive advantage to Apple versus its competitors. In this sense, the device goes from being a commoditized piece of hardware to a platform that other companies need to plugin to. So while the term SDK has been around since the beginning of software, it can often serve as the starting point in an IT company’s business strategy.</p>
+    
+                                    <h3>How to approach a SDK?</h3>
+                                    <p>Below are a few ways to acheive SDK</p>
+    
+                                    <ul>
+                                        <li>Modularized Code makes it easy to extend parts of application instead as a whole</li>
+                                        <li>Extension Points to most of the moving parts of a application like Services, Controllers etc.</li>
+                                        <li>Detailed API Documentation</li>
+                                        <li>Scaffolding Tools</li>
+                                        <li>Configuration over Code (Metadata based application)</li>
+                                        <li>Tools to generate the configuration</li>
+                                    </ul>
+    
+                                    <h3>UI SDK through configuration</h3>
+                                    <p>Enterprise Digital Software consists mainly of Forms, Lists and Dashboards. 
+                                        So by targeting to make these three major components to be rendered based on Configuration allows us to make the Code comply to CUDM (Customizable, Upgradable, Deployable and Migratable)</p>
+                                    
+                                    <p>For each component (form, list or dashboard) we need the below</p>
+                                    <ul>
+                                        <li>Registry to register sub-components with their specific configuration</li>
+                                        <li>Configuration Interpretor and Renderer</li>
+                                        <li>Designer to allow generation of the Configuration through Drag n Drop for super fast development and also this allows us to acheive constrained development</li>
+                                    </ul>
+    
+                                    <p>Also, by using Scaffolding tools we can generate boilerplate code for components, modules, services, themes.</p>
+                            </section>
                             </section><!--//doc-section-->
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
                     <div class="doc-sidebar hidden-xs">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                                <li><a class="scrollto" href="#vision-section">Vision</a></li>
+                                <li><a class="scrollto" href="#challenge-section">Challenge</a></li>
+                                
                                 <li>
-                                    <a class="scrollto" href="#architecture-section">Architecture</a>
+                                    <a class="scrollto" href="#architecture-section">Framework</a>
                                     <ul class="nav doc-sub-menu">
                                         <li><a class="scrollto" href="#hori">Horizontal Framework</a></li>
+                                        <li><a class="scrollto" href="#language">Language</a></li>
                                         <li><a class="scrollto" href="#vert">Vertical Framework</a></li>
-                                        <li><a class="scrollto" href="#libs">3rd Party Libs</a></li>
-                                        <li><a class="scrollto" href="#framework">Core Framework</a></li>
-                                        <li><a class="scrollto" href="#modules">Module Dependency</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="scrollto" href="#sdk-section">SDK</a></li>
                                 <li>
-                                    <a class="scrollto" href="#build-system-section">Build System</a>
-                                    <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#generic">Generic Build Pipeline</a></li>
-                                        <li><a class="scrollto" href="#prod">Production Build Pipeline</a></li>
-                                        <li><a class="scrollto" href="#dev">Development Build Pipeline</a></li>
-                                        <li><a class="scrollto" href="#incdev">Incremental Dev Build Pipeline</a></li>
-                                        <li><a class="scrollto" href="#coverage">Coverage Build Pipeline</a></li>
-                                        <li><a class="scrollto" href="#publish">Publish Build Pipeline</a></li>
-                                    </ul>
+                                    <a class="scrollto" href="#comp-lib-section">Component Library</a>   
                                 </li>
+                                <li><a class="scrollto" href="#build-system-section">Build System (CLI)</a></li>
+                                <li><a class="scrollto" href="#build-pipelines">Pipelines</a></li>
+                                <li><a class="scrollto" href="#dep-man-section">Dependency Management</a></li>
+                                <li>
+                                    <a class="scrollto" href="#formats-section">Output Format</a>
+                                </li>
+                                <li><a class="scrollto" href="#versioning-section">Versioning</a></li>
                                 <li><a class="scrollto" href="#coding-convention-section">Coding Conventions</a></li>
-                                <li><a class="scrollto" href="#formats-section">Output Format</a></li>
+                                <li><a class="scrollto" href="#sdk-section">SDK</a></li>
                             </ul><!--//doc-menu-->
                         </nav>
                     </div><!--//doc-sidebar-->
