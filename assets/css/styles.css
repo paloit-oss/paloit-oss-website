@@ -404,7 +404,7 @@ select {
 /* ======= Doc Styling ======= */
 .doc-wrapper {
   padding: 45px 0;
-  background: #f9f9fb;
+  background: #fff;
 }
 .doc-body {
   position: relative;
@@ -1286,3 +1286,24 @@ select {
 	 border-radius: 10px;
     background-color:  #6bc1b6;
  }
+
+ .short-description {
+   line-height: 1.4;
+   font-weight: 600;
+}
+
+li {
+  margin: 10px 0;
+}
+
+#challenge-section img {
+  width: 80%;
+}
+
+#vert img {
+  width: 100%;
+}
+
+#build-pipelines .section-block img {
+  width: 80%;
+}
