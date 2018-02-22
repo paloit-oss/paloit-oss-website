@@ -121,6 +121,7 @@
                                     <br/>
                                     
                                     <h4>Components</h4>
+                                    <img class="components-img" src="assets/images/ufa/components.png"/>
                                     <p>
                                         The Components should contain all the non domain specific visual components and helpers, that can be used to create other components and business features.
                                         <h5>What is a component?</h5>
@@ -140,6 +141,7 @@
                                     <br/>
                                     
                                     <h4>Modules and Shared Modules</h4>
+                                    <img class="modules-img" src="assets/images/ufa/modules.png"/>
                                     <p>
                                         <h5>What is a Module?</h5>
                                         <p>
@@ -191,9 +193,23 @@
                                         <li>Component Showcase/Demo for demonstrating all releases of components. This will prove that the component seamlessly fits along with other components (Eg. React StoryBook, Styleguidst)</li>
                                     </ul>
                             </section>
-                            <section id="build-system-section" class="doc-section">
-                                <h2 class="section-title">Build System Requirements</h2>
-                                
+                            <section id="cli-section" class="doc-section">
+                                <h2 class="section-title">CLI (Dev Tools)</h2>
+                                <br/>
+                                <p>CLI is used to do all the heavy lifting tasks and helps the developers to concentrate on building functionality. The CLI should handle all the below tasks/functions,</p>
+                                <ul>
+                                    <li>Configurable Build System</li>
+                                    <li>Scaffolding</li>
+                                    <li>Server Emulator</li>
+                                    <li>Define Coding Conventions</li>
+                                    <li>API Docs Generation</li>
+                                    <li>Tests (Unit and E2E tests)</li>
+                                    <li>Static Code Analysis</li>
+                                    <li>Dependency Management</li>
+                                    <li>Release Management</li>
+                                    <li>Pipelines for CI/CD</li>
+                                    <li>Commit hooks: To run pre-commit pipeline</li>
+                                </ul>
                                 <div>
                                     <h3>What is a build system?</h3>
                                     <p>A tool which prescribes and executes the stages in the build pipeline. From another perspective, a build system is a set of steps which transform the source code into something deployable or shareable. It provides utilities to make the development faster and easier.</p>
@@ -212,10 +228,9 @@
                                         <li>Minification</li>
                                         <li>Watch</li>
                                         <li>Incremental rebuild</li>
-                                        <li>Lint</li>
-                                        <li>Serve</li>
-                                        <li>Test</li>
-                                        <li>Dependency Management</li>
+                                        <li>Cache Busting</li>
+                                        <li>Code Splitting</li>
+                                        <li>Switching between API providers based on environment variables</li>
                                 </div>
                             </section>
                             <section id="build-pipelines" class="doc-section">
@@ -247,6 +262,11 @@
                                     <h3 class="block-title">Publish/Share Build Pipeline</h3>
                                     <p>Bundle for components and sharable artifacts (packages)</p>
                                     <img src="assets/images/ufa/build-publish.png"/>
+                                </div>
+                                <div id="commit"  class="section-block">
+                                        <h3 class="block-title">Code Commit Pipeline</h3>
+                                        <p>Pipeline that does static code checks and unit tests before a git commit it executed</p>
+                                        <img src="assets/images/ufa/commit-pipeline.png"/>
                                 </div>
                             </section>
                             <section id="dep-man-section" class="doc-section">
@@ -459,8 +479,8 @@
                                 <li>
                                     <a class="scrollto" href="#comp-lib-section">Component Library</a>   
                                 </li>
-                                <li><a class="scrollto" href="#build-system-section">Build System (CLI)</a></li>
-                                <li><a class="scrollto" href="#build-pipelines">Pipelines</a></li>
+                                <li><a class="scrollto" href="#cli-section">CLI (Dev Tools)</a></li>
+                                <li><a class="scrollto" href="#build-pipelines">Build Pipelines</a></li>
                                 <li><a class="scrollto" href="#dep-man-section">Dependency Management</a></li>
                                 <li>
                                     <a class="scrollto" href="#formats-section">Output Format</a>

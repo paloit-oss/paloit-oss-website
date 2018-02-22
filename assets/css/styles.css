@@ -1086,12 +1086,12 @@ select {
   margin-bottom: 20px;
 }
 .landing-page .branding .logo {
-  font-size: 38px;
+  font-size: 32px;
   margin-top: 0;
   margin-bottom: 0;
 }
 .landing-page .branding .logo img {
-  width: 300px;
+  width: 230px;
 }
 .landing-page .branding .logo div {
   padding: 5px;
@@ -1305,5 +1305,13 @@ li {
 }
 
 #build-pipelines .section-block img {
+  width: 80%;
+}
+
+.github img {
+ width:50px;
+}
+
+#vert img.components-img {
   width: 80%;
 }
